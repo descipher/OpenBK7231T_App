@@ -90,7 +90,7 @@ void Setup_Device_BL602_MagicHome_CCT_LedStrip()
 	PIN_SetPinChannelForPinIndex(20, 1);
 
 	CFG_Save_SetupTimer();
-}	
+}
 
 // DeviceName: Sonoff MiniR3
 // ShortDeviceName: minir3
@@ -498,7 +498,7 @@ void Setup_Device_BK7231N_KS_602_TOUCH() {
 	PIN_SetPinRoleForPinIndex(26, IOR_Button);
 	PIN_SetPinChannelForPinIndex(26, 1);
 
-	CFG_SetFlag(OBK_FLAG_BTN_INSTANTTOUCH,true);
+	CFG_SetFlag(OBK_FLAG_BTN_INSTANTTOUCH, true);
 	CFG_Save_SetupTimer();
 }
 
@@ -616,7 +616,7 @@ void Setup_Device_AvatarASL04() {
 }
 
 
-void Setup_Device_TuyaSmartWIFISwith_4Gang_CB3S(){
+void Setup_Device_TuyaSmartWIFISwith_4Gang_CB3S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(24, IOR_Button);
@@ -644,7 +644,7 @@ void Setup_Device_TuyaSmartWIFISwith_4Gang_CB3S(){
 }
 
 
-void Setup_Device_LSC_Smart_Connect_Plug_CB2S(){
+void Setup_Device_LSC_Smart_Connect_Plug_CB2S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(6, IOR_LED);
@@ -660,7 +660,7 @@ void Setup_Device_LSC_Smart_Connect_Plug_CB2S(){
 }
 
 
-void Setup_Device_DS_102_1Gang_WB3S(){
+void Setup_Device_DS_102_1Gang_WB3S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(1, IOR_LED_WIFI);
@@ -680,7 +680,7 @@ void Setup_Device_DS_102_1Gang_WB3S(){
 
 // see https://www.elektroda.com/rtvforum/viewtopic.php?p=20008969#20008969
 
-void Setup_Device_BK7231T_Gosund_Switch_SW5_A_V2_1(){
+void Setup_Device_BK7231T_Gosund_Switch_SW5_A_V2_1() {
 	CFG_ClearPins();
 
 	// green
@@ -701,7 +701,7 @@ void Setup_Device_BK7231T_Gosund_Switch_SW5_A_V2_1(){
 	CFG_Save_SetupTimer();
 }
 
-void Setup_Device_DS_102_2Gang_WB3S(){
+void Setup_Device_DS_102_2Gang_WB3S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(1, IOR_LED_WIFI);
@@ -729,7 +729,7 @@ void Setup_Device_DS_102_2Gang_WB3S(){
 }
 
 
-void Setup_Device_DS_102_3Gang_WB3S(){
+void Setup_Device_DS_102_3Gang_WB3S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(1, IOR_LED_WIFI);
@@ -765,7 +765,7 @@ void Setup_Device_DS_102_3Gang_WB3S(){
 // https://obrazki.elektroda.pl/2281136200_1652196339.jpg
 // https://obrazki.elektroda.pl/1568452900_1652196348.jpg
 // https://obrazki.elektroda.pl/4600787700_1652196323.jpg
-void Setup_Device_13A_Socket_CB2S(){
+void Setup_Device_13A_Socket_CB2S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(6, IOR_LED);
@@ -810,7 +810,7 @@ void Setup_Device_Deta_Smart_Double_Power_Point_6922HA_Series2() {
 
 //https://enbrightenme.com/enbrighten-indoor-plug-in-mini-wifi-smart-switch-2-pack-white
 //https://www.elektroda.com/rtvforum/viewtopic.php?p=20133554#20133554
-void Setup_Device_Enbrighten_WFD4103(){
+void Setup_Device_Enbrighten_WFD4103() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(7, IOR_LED_n);
@@ -837,16 +837,48 @@ void Setup_Device_Aubess_Mini_Smart_Switch_16A() {
 	CFG_ClearPins();
 	// Led
 	PIN_SetPinRoleForPinIndex(6, IOR_LED_n);
-	PIN_SetPinChannelForPinIndex(6, 1);	
+	PIN_SetPinChannelForPinIndex(6, 1);
 	// Embedded Button
 	PIN_SetPinRoleForPinIndex(8, IOR_Button);
 	PIN_SetPinChannelForPinIndex(8, 1);
 	// Switch
 	PIN_SetPinRoleForPinIndex(14, IOR_Button);
-	PIN_SetPinChannelForPinIndex(14, 1);	
+	PIN_SetPinChannelForPinIndex(14, 1);
 	// Relay
 	PIN_SetPinRoleForPinIndex(15, IOR_Relay);
 	PIN_SetPinChannelForPinIndex(15, 1);
+
+	CFG_Save_SetupTimer();
+}
+
+// Aubess Mini Smart Switch 16A w/CB2S
+void Setup_Device_Aubess_Mini_Smart_Switch_16A_CB2S() {
+
+	// pins are:
+	// led - led_n = P8
+	// embedded button - btn = P23
+	// switch - btn = P24
+	// relay - rel = P26
+
+	CFG_ClearPins();
+	// Led
+	PIN_SetPinRoleForPinIndex(8, IOR_LED_n);
+	PIN_SetPinChannelForPinIndex(8, 1);
+	// energy meter uart rx
+	PIN_SetPinRoleForPinIndex(, IOR_BL0942_RX);
+	PIN_SetPinChannelForPinIndex(10, 1);
+	// energy meter uart tx
+	PIN_SetPinRoleForPinIndex(, IOR_BL0942_TX);
+	PIN_SetPinChannelForPinIndex(11, 1);
+	// Embedded Button
+	PIN_SetPinRoleForPinIndex(23, IOR_Button);
+	PIN_SetPinChannelForPinIndex(23, 1);
+	// Switch
+	PIN_SetPinRoleForPinIndex(24, IOR_Button);
+	PIN_SetPinChannelForPinIndex(24, 1);
+	// Switch
+	PIN_SetPinRoleForPinIndex(26, IOR_Relay);
+	PIN_SetPinChannelForPinIndex(26, 1);
 
 	CFG_Save_SetupTimer();
 }
@@ -866,17 +898,17 @@ void Setup_Device_Zemismart_Light_Switch_KS_811_3() {
 	CFG_ClearPins();
 	// 3 Leds Blue (Wifi Status, All 3 flash together)
 	PIN_SetPinRoleForPinIndex(22, IOR_LED_WIFI_n);
-	PIN_SetPinChannelForPinIndex(22, 1);	
+	PIN_SetPinChannelForPinIndex(22, 1);
 	// Buttons
 	PIN_SetPinRoleForPinIndex(17, IOR_Button);
-	PIN_SetPinChannelForPinIndex(17, 1);	
+	PIN_SetPinChannelForPinIndex(17, 1);
 	PIN_SetPinRoleForPinIndex(26, IOR_Button);
-	PIN_SetPinChannelForPinIndex(26, 2);	
+	PIN_SetPinChannelForPinIndex(26, 2);
 	PIN_SetPinRoleForPinIndex(24, IOR_Button);
-	PIN_SetPinChannelForPinIndex(24, 3);	
+	PIN_SetPinChannelForPinIndex(24, 3);
 	// Relay, Individual LEDs Red (Relays and LEDs are on same GPIO Pins)
 	PIN_SetPinRoleForPinIndex(14, IOR_Relay);
-	PIN_SetPinChannelForPinIndex(14, 1);	
+	PIN_SetPinChannelForPinIndex(14, 1);
 	PIN_SetPinRoleForPinIndex(16, IOR_Relay);
 	PIN_SetPinChannelForPinIndex(16, 2);
 	PIN_SetPinRoleForPinIndex(15, IOR_Relay);
@@ -887,41 +919,41 @@ void Setup_Device_Zemismart_Light_Switch_KS_811_3() {
 
 void Setup_Device_TeslaSmartPlus_TSL_SPL_1() {
 
-    // CB2S
-    // Pins are:
-    // BL0937-CF1 - P6
-    // BL0937-CF - P7
-    // BL0937-SEL - P24
-    // Button - RX1 - P10
-    // Relay - P26
-    // Led - P8
+	// CB2S
+	// Pins are:
+	// BL0937-CF1 - P6
+	// BL0937-CF - P7
+	// BL0937-SEL - P24
+	// Button - RX1 - P10
+	// Relay - P26
+	// Led - P8
 
 
-    CFG_ClearPins();
-    // Button
-    PIN_SetPinRoleForPinIndex(10, IOR_Button_n);
-    PIN_SetPinChannelForPinIndex(10, 0);
-    // Relay
-    PIN_SetPinRoleForPinIndex(8, IOR_LED_WIFI_n);
-    PIN_SetPinChannelForPinIndex(8, 0);
-    // Led
-    PIN_SetPinRoleForPinIndex(26, IOR_Relay);
-    PIN_SetPinChannelForPinIndex(26, 0);
-    // BL0937
-    PIN_SetPinRoleForPinIndex(6, IOR_BL0937_CF1);
-    PIN_SetPinChannelForPinIndex(6, 0);
-    PIN_SetPinRoleForPinIndex(7, IOR_BL0937_CF);
-    PIN_SetPinChannelForPinIndex(7, 0);
-    PIN_SetPinRoleForPinIndex(24, IOR_BL0937_SEL);
-    PIN_SetPinChannelForPinIndex(24, 0);
+	CFG_ClearPins();
+	// Button
+	PIN_SetPinRoleForPinIndex(10, IOR_Button_n);
+	PIN_SetPinChannelForPinIndex(10, 0);
+	// Relay
+	PIN_SetPinRoleForPinIndex(8, IOR_LED_WIFI_n);
+	PIN_SetPinChannelForPinIndex(8, 0);
+	// Led
+	PIN_SetPinRoleForPinIndex(26, IOR_Relay);
+	PIN_SetPinChannelForPinIndex(26, 0);
+	// BL0937
+	PIN_SetPinRoleForPinIndex(6, IOR_BL0937_CF1);
+	PIN_SetPinChannelForPinIndex(6, 0);
+	PIN_SetPinRoleForPinIndex(7, IOR_BL0937_CF);
+	PIN_SetPinChannelForPinIndex(7, 0);
+	PIN_SetPinRoleForPinIndex(24, IOR_BL0937_SEL);
+	PIN_SetPinChannelForPinIndex(24, 0);
 
-    CFG_SetFlag(2,1);
-    CFG_SetFlag(10,1);
+	CFG_SetFlag(2, 1);
+	CFG_SetFlag(10, 1);
 
-    CFG_Save_SetupTimer();
+	CFG_Save_SetupTimer();
 }
 
-void Setup_Device_Calex_900011_1_WB2S(){
+void Setup_Device_Calex_900011_1_WB2S() {
 	CFG_ClearPins();
 
 	PIN_SetPinRoleForPinIndex(6, IOR_Button);
@@ -940,31 +972,31 @@ void Setup_Device_Calex_900011_1_WB2S(){
 }
 void Setup_Device_Immax_NEO_LITE_NAS_WR07W()
 {
-    CFG_ClearPins();
+	CFG_ClearPins();
 
-    // Button
-    PIN_SetPinRoleForPinIndex(9, IOR_Button_n);
-    PIN_SetPinChannelForPinIndex(9, 0);
-    // Relay
-    PIN_SetPinRoleForPinIndex(6, IOR_LED_WIFI_n);
-    PIN_SetPinChannelForPinIndex(6, 0);
-    // Led
-    PIN_SetPinRoleForPinIndex(26, IOR_Relay);
-    PIN_SetPinChannelForPinIndex(26, 0);
+	// Button
+	PIN_SetPinRoleForPinIndex(9, IOR_Button_n);
+	PIN_SetPinChannelForPinIndex(9, 0);
+	// Relay
+	PIN_SetPinRoleForPinIndex(6, IOR_LED_WIFI_n);
+	PIN_SetPinChannelForPinIndex(6, 0);
+	// Led
+	PIN_SetPinRoleForPinIndex(26, IOR_Relay);
+	PIN_SetPinChannelForPinIndex(26, 0);
 
-    CFG_SetShortStartupCommand("backlog startDriver BL0942");
-    CFG_SetFlag(2,1);
-    CFG_SetFlag(10,1);
+	CFG_SetShortStartupCommand("backlog startDriver BL0942");
+	CFG_SetFlag(2, 1);
+	CFG_SetFlag(10, 1);
 
-    CFG_Save_SetupTimer();
+	CFG_Save_SetupTimer();
 }
 
 void Setup_Device_MOES_TouchSwitch_WS_EU1_RFW_N()
 {
-    CFG_ClearPins();
-    CFG_SetShortStartupCommand("backlog startDriver TuyaMCU; setChannelType 1 toggle; linkTuyaMCUOutputToChannel 1 bool 1");
-    CFG_SetFlag(2,1);
-    CFG_SetFlag(10,1);
-    CFG_Save_SetupTimer();
+	CFG_ClearPins();
+	CFG_SetShortStartupCommand("backlog startDriver TuyaMCU; setChannelType 1 toggle; linkTuyaMCUOutputToChannel 1 bool 1");
+	CFG_SetFlag(2, 1);
+	CFG_SetFlag(10, 1);
+	CFG_Save_SetupTimer();
 }
 

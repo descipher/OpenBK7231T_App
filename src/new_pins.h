@@ -29,13 +29,14 @@ enum IORole {
 	IOR_BL0937_SEL,
 	IOR_BL0937_CF,
 	IOR_BL0937_CF1,
+	// uart based BL0942
+	IOR_BL0942_TX,
+	IOR_BL0942_RX,
 	IOR_ADC,
 	IOR_SM2135_DAT,
 	IOR_SM2135_CLK,
-
 	IOR_BP5758D_DAT,
 	IOR_BP5758D_CLK,
-
 	IOR_BP1658CJ_DAT,
 	IOR_BP1658CJ_CLK,
 
@@ -203,7 +204,7 @@ int PIN_GetPinRoleForPinIndex(int index);
 int PIN_GetPinChannelForPinIndex(int index);
 int PIN_GetPinChannel2ForPinIndex(int index);
 int PIN_FindPinIndexForRole(int role, int defaultIndexToReturnIfNotFound);
-const char *PIN_GetPinNameAlias(int index);
+const char* PIN_GetPinNameAlias(int index);
 void PIN_SetPinRoleForPinIndex(int index, int role);
 void PIN_SetPinChannelForPinIndex(int index, int ch);
 void PIN_SetPinChannel2ForPinIndex(int index, int ch);
@@ -236,7 +237,7 @@ int h_isChannelRelay(int tg_ch);
 
 //int PIN_GetPWMIndexForPinIndex(int pin);
 
-int PIN_ParsePinRoleName(const char *name);
+int PIN_ParsePinRoleName(const char* name);
 
 // from new_builtin.c
 void Setup_Device_Empty();
